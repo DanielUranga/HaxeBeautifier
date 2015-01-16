@@ -1,5 +1,8 @@
 -cp src
 -main Main
 
-#-neko bin/HaxeBeautifier.n
---interp
+-lib hxparse
+-lib haxeparser
+
+-neko bin/HaxeBeautifier.n
+#--interp
