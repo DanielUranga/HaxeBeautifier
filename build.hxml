@@ -5,4 +5,5 @@
 -lib haxeparser
 
 -neko bin/HaxeBeautifier.n
-#--interp
+
+-cmd neko bin/HaxeBeautifier.n
