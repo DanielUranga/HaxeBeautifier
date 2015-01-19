@@ -3,6 +3,7 @@ package ;
 
 import haxeparser.Data;
 
+@:access(Printer)
 abstract PTypeDecl(TypeDecl) from TypeDecl
 {
 
@@ -11,10 +12,17 @@ abstract PTypeDecl(TypeDecl) from TypeDecl
 		switch (this.decl) {
 			// d:Definition<ClassFlag, Array<Field>>
 			case EClass(d): {
+				var old = printer.tabs;
+				printer.tabs += printer.tabString;
 				str += '\n';
 				str += 'class ${d.name} {\n';
 				for (field in d.data) {
-					str += printer.printField(field);
+					str += switch(field.kind) {
+						case FVar(t, eo):				'';
+						case FProp(get, set, t, eo): 	'';
+						case FFun(func): 				'\n';
+					}
+					str += printer.tabs + printer.printField(field);
 					str += switch(field.kind) {
 						case FVar(t, eo):				';';
 						case FProp(get, set, t, eo): 	';';
@@ -22,7 +30,8 @@ abstract PTypeDecl(TypeDecl) from TypeDecl
 					}
 					str += '\n';
 				}
-				str += '}';
+				str += '}\n';
+				printer.tabs = old;
 			}
 
 			// d:Definition<EnumFlag, Array<EnumConstructor>>
