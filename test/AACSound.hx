@@ -1,4 +1,4 @@
-package ;
+package com.random.test;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
@@ -48,7 +48,7 @@ class AACSound
 		writePos = 0;
 	}
 	
-	public function play()
+	public function play() : Void
 	{
 		rawInput.addEventListener(ProgressEvent.PROGRESS, dataInputEvent);
 		rawInput.addEventListener(IOErrorEvent.IO_ERROR, errorEvent);
