@@ -1,5 +1,4 @@
-
-package ;
+package com.daniel.haxebeautifier;
 
 import haxeparser.Data;
 using Lambda;

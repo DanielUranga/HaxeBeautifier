@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-package ;
+package com.daniel.haxebeautifier;
 
 import haxe.macro.Expr;
 using Lambda;

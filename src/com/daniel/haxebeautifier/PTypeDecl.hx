@@ -1,9 +1,8 @@
-
-package ;
+package com.daniel.haxebeautifier;
 
 import haxeparser.Data;
 
-@:access(Printer)
+@:access(com.daniel.haxebeautifier.Printer)
 abstract PTypeDecl(TypeDecl) from TypeDecl
 {
 
@@ -36,7 +35,7 @@ abstract PTypeDecl(TypeDecl) from TypeDecl
 
 			// d:Definition<EnumFlag, Array<EnumConstructor>>
 			case EEnum(d): {
-
+				
 			}
 
 			// a:Definition<AbstractFlag, Array<Field>>
